@@ -1,3 +1,4 @@
+import "./style.css";
 import { createUserItem } from "./render.js";
 import { createUserServise, getAllUserServise } from "./services.js";
 import "./style.css";

@@ -11,21 +11,49 @@
     />
   </head>
   <body>
-    <div id="app">
-      <form id="crearUsuarioForm">
-        <h2>Ingrese nuevo estudiante:</h2>
+    <div id="app" class="flex justify-around items-center h-[100vh]">
+      <form
+        id="crearUsuarioForm"
+        class="bg-gray-500 flex flex-col items-center gap-11 justify-center p-[2%] h-auto w-[32%]"
+      >
+        <!-- titulo -->
+        <p class="text-[2vw]">INGRESE NUEVO ESTUDIANTE:</p>
 
-        <div>
-          <label for="nombre_Alumno">Nombre del Alumno:</label>
-          <input type="text" name="nombre_Alumno" id="nombre_Alumno" />
+        <div class="preguntasForm flex flex-col gap-5 w-[100%]">
+          <!-- pregunta nombre -->
+          <div>
+            <label class="text-[1.5vw]" for="nombre_Alumno"
+              >Nombre del Alumno:</label
+            >
+            <input
+              class="bg-white w-[100%] text-[1.5vw] px-2 py-1"
+              type="text"
+              name="nombre_Alumno"
+              id="nombre_Alumno"
+            />
+          </div>
+
+          <!-- pregunta direccion -->
+          <div>
+            <label class="text-[1.5vw]" for="Direccion"
+              >Direccion del Alumno:</label
+            >
+            <input
+              class="bg-white w-[100%] text-[1.5vw] px-2 py-1"
+              type="text"
+              name="Direccion"
+              id="Direccion"
+            />
+          </div>
         </div>
 
-        <div>
-          <label for="Direccion">Direccion del Alumno:</label>
-          <input type="text" name="Direccion" id="Direccion" />
-        </div>
-
-        <button type="submit">Crear Alumno</button>
+        <!-- boton de enviar -->
+        <button
+          type="submit"
+          class="bg-slate-700 text-[1.8vw] w-[100%] h-auto py-2 transform hover:scale-105 transition-transform/"
+        >
+          CREAR ALUMNO
+        </button>
       </form>
 
       <div class="listaDeUsuarios" id="listaDeUsuarios"></div>
