@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <form id="crearUsuarioForm">
+        <h2>Ingrese nuevo estudiante:</h2>
+
+        <div>
+          <label for="nombre_Alumno">Nombre del Alumno:</label>
+          <input type="text" name="nombre_Alumno" id="nombre_Alumno" />
+        </div>
+
+        <div>
+          <label for="Direccion">Direccion del Alumno:</label>
+          <input type="text" name="Direccion" id="Direccion" />
+        </div>
+
+        <button type="submit">Crear Alumno</button>
+      </form>
+
+      <div class="listaDeUsuarios" id="listaDeUsuarios"></div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
