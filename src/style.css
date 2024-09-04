@@ -11,3 +11,28 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 }
+
+.contenedorAlumnoInd {
+  transition: transform ease 0.3s, box-shadow ease 0.2s, margin ease 0.2s;
+  box-shadow: 2px 2px 15px 4px rgb(2, 48, 40);
+}
+
+.contenedorAlumnoInd:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 15px 0.1px rgb(2, 48, 40);
+  background-color: rgb(52, 148, 216);
+  margin: 8px 0;
+}
+
+.botonEditar,
+.botonEliminar {
+  transition: background-color ease 0.2s;
+}
+
+.botonEliminar:hover {
+  background-color: rgb(219, 13, 13);
+}
+
+.botonEditar:hover {
+  background-color: rgb(33, 110, 234);
+}

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const $crearNuevoUsuario = document.getElementById("crearUsuarioForm");
   const $listadeUsarios = document.getElementById("listaDeUsuarios");
 
-  //trae todo slos usarios
+  //trae tods los usarios
   const getAllStudenst = async () => {
     $listadeUsarios.innerHTML = "";
 
