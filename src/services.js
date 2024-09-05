@@ -18,7 +18,19 @@ export const createUserServise = async (estudiante) => {
 
 //ELIMINAR
 export const deleteUserServise = async (estudianteid) => {
-  return fetch(`${API_URL}/EliminarAlumno` + estudianteid, {
+  return fetch(`${API_URL}/EliminarAlumno/` + estudianteid, {
     method: "DELETE",
   }).then((res) => res.status == 200);
+};
+
+//EDITAR
+export const UpdateUserServise = async (estudianteid, estudiante) => {
+  console.log("hola axel", estudianteid);
+  return fetch(`${API_URL}/ActualizarAlumno/` + estudianteid, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(estudiante),
+  }).then((res) => res.json());
 };

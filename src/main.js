@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   };
 
-  console.log($crearNuevoUsuario);
+  console.log("se trajo correstamente");
 
   //crea usarios
   $crearNuevoUsuario.addEventListener("submit", async (e) => {

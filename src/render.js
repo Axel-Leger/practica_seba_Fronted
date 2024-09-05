@@ -1,4 +1,4 @@
-import { deleteUserServise } from "./services.js";
+import { deleteUserServise, UpdateUserServise } from "./services";
 
 export const createUserItem = (estudiante) => {
   const $container = document.createElement("div");
@@ -31,6 +31,7 @@ export const createUserItem = (estudiante) => {
   const $botonEditar = document.createElement("span");
   $botonEditar.innerText = "Editar";
   $botonEditar.id = "botonEditarID";
+
   const $eliminar = document.createElement("span");
   $eliminar.innerHTML = `<i class="fi fi-rr-trash"></i>`;
 
@@ -101,6 +102,133 @@ export const createUserItem = (estudiante) => {
     "pb-[3px]",
     "rounded"
   );
+
+  // APARECER FORM DE UPDATE
+  const $contformUpdate = document.createElement("div");
+  $contformUpdate.classList.add("contFormUpdate");
+  $contformUpdate.style.display = "none";
+  $contformUpdate.id = "contenedorFomr";
+
+  const $form = document.createElement("form");
+  const $titulo = document.createElement("p");
+
+  const $preguntas = document.createElement("div");
+
+  const $Nameupdate = document.createElement("div");
+  const $direccUpdate = document.createElement("div");
+
+  const $labelNombre = document.createElement("label");
+  const $inputnombre = document.createElement("input");
+  const $labelDireccion = document.createElement("label");
+  const $inputDireccion = document.createElement("input");
+
+  const $botonsub = document.createElement("button");
+
+  // innertTEXT
+  $titulo.innerText = "Estas editando a: " + estudiante.nombre_Alumno;
+  $labelNombre.innerText = "Nuevo Nombre: ";
+  $labelDireccion.innerText = "Nueva Dirección: ";
+  $botonsub.innerText = "Editar Alumno";
+
+  // appendChilds
+  $contformUpdate.appendChild($form);
+  $form.appendChild($titulo);
+  $form.appendChild($preguntas);
+
+  $preguntas.appendChild($Nameupdate);
+  $Nameupdate.appendChild($labelNombre);
+  $Nameupdate.appendChild($inputnombre);
+
+  $preguntas.appendChild($direccUpdate);
+  $direccUpdate.appendChild($labelDireccion);
+  $direccUpdate.appendChild($inputDireccion);
+
+  $form.appendChild($botonsub);
+
+  // Agregar estilos e IDs
+  $inputnombre.id = "editarInput";
+  $botonsub.id = "botonUpdate";
+  $botonsub.type = "submit";
+  $inputDireccion.id = "inputDicc";
+  $inputnombre.id = "inputName";
+
+  // Añadir clases (estilos)
+  $contformUpdate.classList.add(
+    "bg-slate-300",
+    "px-4",
+    "py-8",
+    "absolute",
+    "rounded-md",
+    "h-auto",
+    "flex",
+    "flex-col",
+    "justify-center"
+  );
+  $preguntas.classList.add("infopreguntas", "flex", "flex-col", "gap-5");
+  $form.classList.add("flex", "flex-col", "gap-6");
+  $titulo.classList.add(
+    "text-black",
+    "font-medium",
+    "text-[2.5vw]",
+    "text-slate-800"
+  );
+  $labelDireccion.classList.add("text-black", "text-[2vw]", "text-slate-800");
+  $labelNombre.classList.add("text-black", "text-[2vw]", "text-slate-800");
+  $botonsub.classList.add(
+    "bg-slate-500",
+    "py-2",
+    "w-[100%]",
+    "text-[2vw]",
+    "rounded",
+    "font-medium"
+  );
+  $inputDireccion.classList.add(
+    "w-[100%]",
+    "h-10",
+    "bg-white",
+    "text-slate-800",
+    "text-lg"
+  );
+  $inputnombre.classList.add(
+    "w-[100%]",
+    "h-10",
+    "bg-white",
+    "text-slate-800",
+    "text-lg"
+  );
+
+  const $app = document.getElementById("app");
+  $app.appendChild($contformUpdate);
+  const oscurecer = document.getElementById("oscurecer");
+  oscurecer.style.display = "none";
+  const idestudianteEditar = estudiante.id;
+  const botonupdate = document.getElementById("botonUpdate");
+
+  // EventListener para el botón de editar
+  $botonEditar.addEventListener("click", () => {
+    $contformUpdate.style.display = "block";
+    oscurecer.style.display = "block";
+
+    console.log(idestudianteEditar);
+  });
+
+  //EVENTO ACTUALIZAR INFO
+
+  botonupdate.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const nombre_Alumno = document.getElementById("inputName").value;
+    const Direccion = document.getElementById("inputDicc").value;
+
+    $contformUpdate.style.display = "none";
+    oscurecer.style.display = "none";
+  });
+
+  // EventListener para el overlay (oscurecer)
+  oscurecer.addEventListener("click", () => {
+    $contformUpdate.style.display = "none";
+    oscurecer.style.display = "none";
+  });
 
   $eliminar.classList.add(
     "botonEliminar",

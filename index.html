@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <div id="app" class="flex justify-around items-center h-[100vh]">
+    <div id="app" class="relative flex justify-around items-center h-[100vh]">
       <form
         id="crearUsuarioForm"
         class="bg-slate-300 flex flex-col items-center gap-7 justify-center p-[2%] h-auto w-[32%] rounded-md"
@@ -64,11 +64,14 @@
         </button>
       </form>
 
+      <div id="oscurecer" class="oscurecer"></div>
+
       <div
         class="listaDeUsuarios border-b-[15px] border-slate-100 border-t-[15px] bg-slate-100 flex flex-col gap-6 w-[48%] px-5 py-7 overflow-auto h-[78%] items-center"
         id="listaDeUsuarios"
       ></div>
     </div>
     <script type="module" src="./src/main.js"></script>
+    <script type="module" src="src/render.js"></script>
   </body>
 </html>
